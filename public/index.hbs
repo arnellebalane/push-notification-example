@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Push Notification Example</title>
+    </head>
+
+    <body>
+        <button>Subscribe to Push Notifications</button>
+
+        <script>
+            window.CSRF_TOKEN = '{{ csrf }}';
+            window.VAPID_PUBLIC_KEY = '{{ vapidPublicKey }}';
+        </script>
+        <script src="index.js"></script>
+    </body>
+</html>
