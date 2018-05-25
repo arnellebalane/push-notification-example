@@ -22,7 +22,16 @@ server([
             body: 'This is a test notification from the server.',
             icon: '/assets/logo.png',
             badge: '/assets/badge.png',
-            tag: 'server-notification'
+            tag: 'main-notification',
+            actions: [ {
+                action: 'select-left',
+                title: 'Choose Left',
+                icon: '/assets/left.png'
+            }, {
+                action: 'select-right',
+                title: 'Choose Right',
+                icon: '/assets/right.png'
+            } ]
         });
 
         const response = await webpush.sendNotification(subscription, payload);

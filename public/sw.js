@@ -8,7 +8,16 @@ addEventListener('push', e => {
         body: 'This is the notification body.',
         icon: '/assets/logo.png',
         badge: '/assets/badge.png',
-        tag: 'client-notification'
+        tag: 'main-notification',
+        actions: [ {
+            action: 'select-left',
+            title: 'Choose Left',
+            icon: '/assets/left.png'
+        }, {
+            action: 'select-right',
+            title: 'Choose Right',
+            icon: '/assets/right.png'
+        } ]
     };
 
     e.waitUntil(
