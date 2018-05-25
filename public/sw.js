@@ -24,3 +24,24 @@ addEventListener('push', e => {
         registration.showNotification(title, data)
     );
 });
+
+addEventListener('notificationclick', e => {
+    e.notification.close();
+
+    let title = 'You clicked the notification!';
+    const data = {
+        body: 'You are awesome!',
+        icon: '/assets/logo.png',
+        badge: '/assets/badge.png'
+    };
+
+    if (e.notification.action === 'select-left') {
+        title = 'You chose left!';
+    } else if (e.notification.action === 'select-right') {
+        title = 'You chose right!';
+    }
+
+    e.waitUntil(
+        registration.showNotification(title, data)
+    );
+});
